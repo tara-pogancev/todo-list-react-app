@@ -6,7 +6,7 @@ function TasksList() {
     const [todos, setTodos] = useState([]);
 
     const NewTask = todo => {
-        const newTasks = [todo, ...todos]
+        const newTasks = [...todos, todo]
         setTodos(newTasks);
     }
 
@@ -28,7 +28,7 @@ function TasksList() {
 
     return (
         <div>
-            <h1>What's the plan for today?</h1>
+            <h1>What's it gonna be for the day?</h1>
             <TodoForm onSubmit={NewTask}/>
             <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo}/>
         </div>

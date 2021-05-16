@@ -7,7 +7,9 @@ function Todo({todos, completeTodo, removeTodo}) {
         <div className={todo.completed ? 'todo-item complete' : 'todo-item'}
         key={index}>
 
-            <div key={todo.id} onClick={() => completeTodo(todo.id)}>
+            <input type="checkbox" checked={todo.completed} onClick={() => completeTodo(todo.id)}></input>
+
+            <div key={todo.id}>
                 {!todo.completed ? todo.text : <s>{todo.text}</s>}
             </div>
 
