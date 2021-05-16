@@ -28,7 +28,7 @@ function TasksList() {
 
     return (
         <div>
-            <h1>What's it gonna be for the day?</h1>
+            <h1>What's on the schedule today?</h1>
             <TodoForm onSubmit={NewTask}/>
             <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo}/>
         </div>
