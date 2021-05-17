@@ -5,13 +5,13 @@ import Todo from './Todo'
 function TasksList() {
     const [todos, setTodos] = useState([]);
 
-    const NewTask = todo => {
+    const newTask = todo => {
         const newTasks = [...todos, todo]
         setTodos(newTasks);
     }
 
     const completeTodo = id => {
-        let updatedTodos = todos.map(todo => {
+        const updatedTodos = todos.map(todo => {
             if (todo.id === id) {
                 todo.completed = !todo.completed
             }
@@ -29,7 +29,7 @@ function TasksList() {
     return (
         <div>
             <h1>What's on the schedule today?</h1>
-            <TodoForm onSubmit={NewTask}/>
+            <TodoForm onSubmit={newTask}/>
             <Todo todos={todos} completeTodo={completeTodo} removeTodo={removeTodo}/>
         </div>
     )
